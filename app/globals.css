@@ -1,0 +1,445 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    transition: background-color 0.3s, color 0.3s;
+  }
+  body {
+    @apply bg-background text-foreground min-h-screen antialiased;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.5em;
+  }
+  a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+  }
+  a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    opacity: 0.2;
+    border-radius: 1px;
+    transform: scaleX(0);
+    transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), opacity 0.2s;
+  }
+  a:hover, a:focus {
+    color: hsl(var(--primary));
+    outline: none;
+  }
+  a:hover::after, a:focus::after {
+    opacity: 0.5;
+    transform: scaleX(1);
+  }
+  .card, .bg-card {
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.06);
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border: 1px solid hsl(var(--border));
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .btn, button, [type="button"], [type="submit"] {
+    @apply rounded-lg px-4 py-2 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary/60 focus:ring-offset-2;
+  }
+  input, textarea, select {
+    @apply rounded-md border border-input px-3 py-2 bg-background text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary;
+  }
+  table {
+    @apply w-full border-collapse rounded-lg overflow-hidden shadow-sm;
+  }
+  th, td {
+    @apply px-4 py-2 text-left align-middle;
+  }
+  th {
+    @apply bg-muted text-foreground font-semibold;
+  }
+  tr:nth-child(even) td {
+    @apply bg-muted/50;
+  }
+  .timetable-grid {
+    @apply grid rounded-lg overflow-hidden shadow-timetable bg-muted;
+    grid-template-columns: 120px repeat(5, 1fr);
+    gap: 2px;
+  }
+  .timetable-cell {
+    @apply bg-background p-3 min-h-[90px] flex items-center justify-center text-center text-sm border border-border transition-all duration-200;
+  }
+  .timetable-header {
+    @apply bg-gradient-to-br from-muted to-background font-semibold border border-border sticky top-0 z-10;
+  }
+}
+
+@layer components {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
+
+@media (max-width: 1024px) {
+  .timetable-grid {
+    grid-template-columns: 80px repeat(5, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .timetable-cell {
+    padding: 8px 4px;
+    min-height: 60px;
+    font-size: 11px;
+  }
+}
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .timetable-grid { box-shadow: none !important; }
+  .timetable-cell { background: #fff !important; color: #000 !important; }
+}
+
+/* Enhanced Timetable Grid Styles */
+.timetable-grid {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  gap: 2px;
+  background-color: #f1f5f9 !important;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.timetable-cell {
+  background-color: white !important;
+  padding: 12px 8px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0 !important;
+  color: #171717 !important;
+}
+
+.timetable-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+  font-weight: 600;
+  border: 1px solid #cbd5e1 !important;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: #171717 !important;
+}
+
+.timetable-entry {
+  border-radius: 6px;
+  padding: 8px;
+  color: white !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: move;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timetable-entry:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Drag and Drop Styles */
+.timetable-cell.drag-over {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border: 2px dashed #3b82f6;
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+.timetable-cell.dragging {
+  opacity: 0.5;
+  transform: rotate(2deg);
+}
+
+/* Multi-subject styles */
+.timetable-entry + .timetable-entry {
+  margin-top: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .timetable-grid {
+    display: none;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .timetable-cell {
+    padding: 8px 6px;
+    min-height: 70px;
+    font-size: 11px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  .timetable-grid {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .timetable-cell {
+    border: 1px solid #000;
+  }
+
+  .timetable-entry {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
+
+/* Scrollbar Styling */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Additional visibility fixes */
+.card, .bg-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #171717 !important;
+}
+
+.text-foreground {
+  color: #171717 !important;
+}
+
+.bg-muted {
+  background-color: #f9fafb !important;
+}
+
+.text-muted-foreground {
+  color: #6b7280 !important;
+}
+
+/* Ensure all form elements are visible */
+input, textarea, select {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #171717 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Ensure basic buttons are visible */
+.btn:not([class*="bg-"]), button:not([class*="bg-"]) {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
+  border: 1px solid #3b82f6 !important;
+}
+
+/* Ensure tables are visible */
+table {
+  background-color: #ffffff !important;
+  color: #171717 !important;
+}
+
+th, td {
+  border: 1px solid #e5e7eb !important;
+  color: #171717 !important;
+}
+
+th {
+  background-color: #f9fafb !important;
+}
+
+/* Ensure dialogs and modals are visible */
+[role="dialog"], .dialog, .modal {
+  background-color: #ffffff !important;
+  color: #171717 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Ensure dropdowns are visible */
+.dropdown, .popover {
+  background-color: #ffffff !important;
+  color: #171717 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+/* Tour component height fixes */
+.tour-container {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.tour-card {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.tour-content {
+  max-height: calc(90vh - 200px);
+  overflow-y: auto;
+}
+
+/* Ensure tour overlays don't cause scrolling */
+.tour-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* Smooth scrolling for tour elements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tour focus indicator positioning */
+.tour-focus-indicator {
+  position: absolute;
+  z-index: 60;
+  pointer-events: none;
+}
+
+/* Tour button animations */
+.tour-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.tour-button:hover {
+  transform: scale(1.05);
+}
+
+/* Welcome tour specific styles */
+.welcome-tour-card {
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-tour-header {
+  flex-shrink: 0;
+}
+
+.welcome-tour-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.welcome-tour-actions {
+  flex-shrink: 0;
+}

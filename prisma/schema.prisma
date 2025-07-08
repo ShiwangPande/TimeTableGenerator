@@ -1,0 +1,240 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  TEACHER
+  STUDENT
+}
+
+enum ClassLevel {
+  IB_MYP
+  IB_DP
+  Gen
+}
+
+enum SubjectCategory {
+  Individual
+  Societies
+  Sciences
+}
+
+enum DayOfWeek {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+}
+
+enum SwapRequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum AcademicPeriodType {
+  TERM
+  HOLIDAY
+  EXAM
+  EVENT
+}
+
+enum IBGroup {
+  INDIVIDUALS_AND_SOCIETIES
+  SCIENCES
+  LANGUAGES
+  MATHEMATICS
+  ARTS
+  // Add more as needed
+}
+
+enum IBLevel {
+  MYP
+  DP
+}
+
+model User {
+  id       String @id @default(cuid())
+  email    String @unique
+  name     String
+  role     Role   @default(STUDENT)
+  clerkId  String @unique
+  
+  teacher  Teacher?
+  student  Student?
+  
+  // Swap requests
+  requestedSwaps SwapRequest[] @relation("RequestedBy")
+  receivedSwaps  SwapRequest[] @relation("ReceivedBy")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Teacher {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  subjects Subject[]
+  
+  department     String?
+  specialization String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Student {
+  id      String @id @default(cuid())
+  userId  String @unique
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  classId String
+  class   Class  @relation(fields: [classId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Class {
+  id      String     @id @default(cuid())
+  name    String
+  level   ClassLevel
+  section String
+  
+  subjects         Subject[]
+  students         Student[]
+  timetableEntries TimetableEntry[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([name, section])
+}
+
+model Subject {
+  id                String          @id @default(cuid())
+  name              String
+  category          SubjectCategory
+  multiSlotAllowed  Boolean         @default(false)
+  teacherId         String
+  classId           String
+  ibGroup           IBGroup
+  level             IBLevel
+  
+  teacher Teacher @relation(fields: [teacherId], references: [id])
+  class   Class   @relation(fields: [classId], references: [id])
+  
+  timetableEntries TimetableEntry[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Room {
+  id       String @id @default(cuid())
+  name     String @unique
+  capacity Int
+  
+  timetableEntries TimetableEntry[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TimeSlot {
+  id        String   @id @default(cuid())
+  label     String   @unique
+  startTime DateTime
+  endTime   DateTime
+  
+  timetableEntries TimetableEntry[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TimetableEntry {
+  id         String    @id @default(cuid())
+  classId    String
+  subjectId  String
+  roomId     String
+  timeSlotId String
+  dayOfWeek  DayOfWeek
+  colorCode  String?
+  
+  class    Class    @relation(fields: [classId], references: [id])
+  subject  Subject  @relation(fields: [subjectId], references: [id])
+  room     Room     @relation(fields: [roomId], references: [id])
+  timeSlot TimeSlot @relation(fields: [timeSlotId], references: [id])
+  
+  // Swap request relations
+  fromSwapRequests SwapRequest[] @relation("FromEntry")
+  toSwapRequests   SwapRequest[] @relation("ToEntry")
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([classId, timeSlotId, dayOfWeek])
+}
+
+model SwapRequest {
+  id          String            @id @default(cuid())
+  requesterId String
+  targetId    String
+  status      SwapRequestStatus @default(PENDING)
+  
+  // Entry to be swapped
+  fromEntryId String
+  toEntryId   String
+  
+  // Request details
+  reason      String?
+  adminNotes  String?
+  
+  // Relations
+  requester User @relation("RequestedBy", fields: [requesterId], references: [id])
+  target    User @relation("ReceivedBy", fields: [targetId], references: [id])
+  
+  fromEntry TimetableEntry @relation("FromEntry", fields: [fromEntryId], references: [id])
+  toEntry   TimetableEntry @relation("ToEntry", fields: [toEntryId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AcademicPeriod {
+  id          String              @id @default(cuid())
+  name        String
+  type        AcademicPeriodType
+  startDate   DateTime
+  endDate     DateTime
+  description String?
+  colorCode   String              @default("#3B82F6")
+  isActive    Boolean             @default(true)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([name, type])
+}
+
+model AcademicEvent {
+  id        String   @id @default(cuid())
+  title     String
+  startDate DateTime
+  endDate   DateTime
+  type      String   // e.g. 'Holiday', 'Exam', 'Event'
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([title, type])
+}
