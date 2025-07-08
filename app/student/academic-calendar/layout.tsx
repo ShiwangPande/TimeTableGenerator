@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import type React from "react"
 import { requireRole } from "@/lib/auth"
 import { Role } from "@prisma/client"

@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { RoleLayoutWrapper } from "@/components/role-layout-wrapper"
 import { Role } from "@prisma/client"
 
