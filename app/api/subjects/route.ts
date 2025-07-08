@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 import { type NextRequest, NextResponse } from "next/server"
 import { requireRole } from "@/lib/auth"
 import { Role } from "@prisma/client"
