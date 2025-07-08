@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TeachersTable } from "@/components/teachers-table"
 import { CreateTeacherDialog } from "@/components/create-teacher-dialog"
