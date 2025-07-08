@@ -1,8 +1,6 @@
 "use client";
 export const dynamic = 'force-dynamic';
 
-"use client"
-
 import { TimetableView } from "@/components/timetable-view"
 import { TimetableFilters } from "@/components/timetable-filters"
 import { MultiSubjectAssignment } from "@/components/multi-subject-assignment"
