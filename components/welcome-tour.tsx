@@ -32,11 +32,11 @@ const roleInfo = {
   ADMIN: {
     title: "🎉 Welcome to Admin Dashboard",
     description: "You have full control over the timetable system. Let's get you started with powerful management tools!",
-    icon: <Settings className="h-8 w-8 text-blue-600" />,
-    color: "from-blue-500 to-purple-600",
-    bgColor: "bg-blue-50",
-    borderColor: "border-blue-200",
-    textColor: "text-blue-700",
+    icon: <Settings className="h-8 w-8 text-orange-600" />,
+    color: "from-orange-400 to-red-400",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    textColor: "text-orange-700",
     features: [
       "Manage teachers, classes, and subjects",
       "Generate and edit timetables",

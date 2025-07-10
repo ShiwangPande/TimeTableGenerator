@@ -1,0 +1,51 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" width="100%">
+  <defs>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#bbb" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 Q 2 5 0 0" fill="#111"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="700" height="700" fill="#fff"/>
+  <!-- Title -->
+  <text x="350" y="55" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="600" fill="#111" text-anchor="middle" style="letter-spacing:0.5px;">Swap Request Lifecycle</text>
+  <!-- Student Submits Swap Request -->
+  <rect x="180" y="90" width="340" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="350" y="124" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="400" fill="#111" text-anchor="middle">Student Submits Swap Request</text>
+  <!-- Teacher Reviews Request -->
+  <rect x="180" y="170" width="340" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="350" y="204" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="400" fill="#111" text-anchor="middle">Teacher Reviews Request</text>
+  <!-- Status: Rejected (Teacher) -->
+  <rect x="40" y="290" width="200" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="140" y="324" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#111" text-anchor="middle">Status: Rejected</text>
+  <!-- Admin Reviews Request -->
+  <rect x="460" y="290" width="200" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="560" y="324" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#111" text-anchor="middle">Admin Reviews Request</text>
+  <!-- Status: Rejected (Admin) -->
+  <rect x="40" y="410" width="200" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="140" y="444" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#111" text-anchor="middle">Status: Rejected</text>
+  <!-- Update Timetable -->
+  <rect x="460" y="410" width="200" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="560" y="444" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#111" text-anchor="middle">Update Timetable</text>
+  <!-- Notify Student -->
+  <rect x="260" y="530" width="180" height="54" rx="18" fill="#fff" stroke="#111" stroke-width="2" filter="url(#soft-shadow)"/>
+  <text x="350" y="564" font-family="'Segoe UI', Arial, sans-serif" font-size="17" font-weight="400" fill="#111" text-anchor="middle">Notify Student</text>
+  <!-- Curved Arrows -->
+  <!-- Student to Teacher -->
+  <path d="M350,144 C350,155 350,165 350,170" stroke="#111" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <!-- Teacher to Rejected (left) -->
+  <path d="M220,224 C180,244 140,275 140,290" stroke="#111" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="180" y="280" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#111" text-anchor="middle">Reject</text>
+  <!-- Teacher to Admin (right) -->
+  <path d="M480,224 C520,244 560,275 560,290" stroke="#111" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="520" y="280" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#111" text-anchor="middle">Approve</text>
+  <!-- Admin to Rejected (left) -->
+  <path d="M560,344 C400,384 140,410 140,410" stroke="#111" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="350" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#111" text-anchor="middle">Reject</text>
+  <!-- Admin to Update Timetable (right) -->
+  <path d="M660,344 C680,384 560,410 560,410" stroke="#111" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="640" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#111" text-anchor="middle">Approve</text>
+  <!-- Update Timetable to Notify Student -->
+  <path d="M560,464 C500,514 350,530 350,530" stroke="#111" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+</svg>

@@ -25,8 +25,17 @@ export function TopNav({ user, onMenuClick }: TopNavProps) {
   const [signingOut, setSigningOut] = useState(false)
 
   const handleSignOut = async () => {
-    if (signOut) {
-      await signOut({ redirectUrl: "/" })
+    setSigningOut(true);
+    try {
+      if (signOut) {
+        await signOut({ redirectUrl: "/" });
+        // Fallback: force reload in case Clerk's redirect does not work
+        window.location.href = "/";
+      } else {
+        window.location.href = "/";
+      }
+    } catch (error) {
+      window.location.href = "/";
     }
   }
 

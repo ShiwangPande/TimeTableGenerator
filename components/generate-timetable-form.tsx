@@ -104,7 +104,7 @@ export function GenerateTimetableForm({
   }
 
   // Check if we have enough data to generate timetables
-  const canGenerate = classes.length > 0 && subjects.length > 0 && timeSlots.length > 0 && rooms.length > 0
+  const canGenerate = (classes?.length ?? 0) > 0 && (subjects?.length ?? 0) > 0 && (timeSlots?.length ?? 0) > 0 && (rooms?.length ?? 0) > 0
 
   return (
     <div className="space-y-4">

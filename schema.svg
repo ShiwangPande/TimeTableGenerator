@@ -1,0 +1,354 @@
+<svg aria-roledescription="er" role="graphics-document document" viewBox="-106.66200256347656 0 1646.1820068359375 1803.5999755859375" style="background: #fff;" xmlns="http://www.w3.org/2000/svg" width="1646.18" height="1803.6" id="mermaid-svg-figma-compatible">
+  <style>
+    svg { background: #fff; }
+    #mermaid-svg-figma-compatible {
+      font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;
+      font-size: 16px;
+      fill: #000;
+    }
+    .entityBox { fill: #fff9db; stroke: #2a2a2a; }
+    .attributeBoxOdd { fill: #fffbe6; stroke: #2a2a2a; }
+    .attributeBoxEven { fill: #fffde7; stroke: #2a2a2a; }
+    .relationshipLabelBox { fill: #fff; opacity: 0.7; }
+    .relationshipLine { stroke: #000; }
+    .entityTitleText, .er.entityLabel { text-anchor: middle; font-size: 18px; fill: #000; font-weight: bold; }
+    .er.entityLabel { font-size: 12px; font-weight: normal; }
+    /* Bold leftmost entity titles */
+    #entity-AcademicPeriod-1b8e84ea-2bbc-55a6-93de-5b69df6f18a9 .er.entityLabel,
+    #entity-AcademicEvent-e944036e-dc3d-55e7-ae92-f5c8d4f010b2 .er.entityLabel {
+      font-weight: bold;
+    }
+  </style>
+  <defs>
+    <marker orient="auto" markerHeight="240" markerWidth="190" refY="7" refX="0" id="MD_PARENT_START">
+      <path d="M 18,7 L9,13 L1,7 L9,1 Z"/>
+    </marker>
+    <marker orient="auto" markerHeight="28" markerWidth="20" refY="7" refX="19" id="MD_PARENT_END">
+      <path d="M 18,7 L9,13 L1,7 L9,1 Z"/>
+    </marker>
+    <marker orient="auto" markerHeight="18" markerWidth="18" refY="9" refX="0" id="ONLY_ONE_START">
+      <path d="M9,0 L9,18 M15,0 L15,18" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="18" markerWidth="18" refY="9" refX="18" id="ONLY_ONE_END">
+      <path d="M3,0 L3,18 M9,0 L9,18" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="18" markerWidth="30" refY="9" refX="0" id="ZERO_OR_ONE_START">
+      <circle r="6" cy="9" cx="21" fill="white" stroke="gray"/>
+      <path d="M9,0 L9,18" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="18" markerWidth="30" refY="9" refX="30" id="ZERO_OR_ONE_END">
+      <circle r="6" cy="9" cx="9" fill="white" stroke="gray"/>
+      <path d="M21,0 L21,18" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="36" markerWidth="45" refY="18" refX="18" id="ONE_OR_MORE_START">
+      <path d="M0,18 Q 18,0 36,18 Q 18,36 0,18 M42,9 L42,27" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="36" markerWidth="45" refY="18" refX="27" id="ONE_OR_MORE_END">
+      <path d="M3,9 L3,27 M9,18 Q27,0 45,18 Q27,36 9,18" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="36" markerWidth="57" refY="18" refX="18" id="ZERO_OR_MORE_START">
+      <circle r="6" cy="18" cx="48" fill="white" stroke="gray"/>
+      <path d="M0,18 Q18,0 36,18 Q18,36 0,18" fill="none" stroke="gray"/>
+    </marker>
+    <marker orient="auto" markerHeight="36" markerWidth="57" refY="18" refX="39" id="ZERO_OR_MORE_END">
+      <circle r="6" cy="18" cx="9" fill="white" stroke="gray"/>
+      <path d="M21,18 Q39,0 57,18 Q39,36 21,18" fill="none" stroke="gray"/>
+    </marker>
+  </defs>
+  <g>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M591.28,160.991L680.204,186.426C769.129,211.86,946.978,262.73,1035.902,298.332C1124.827,333.933,1124.827,354.267,1124.827,364.433L1124.827,374.6" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M591.28,218.645L605.098,234.471C618.915,250.296,646.551,281.948,660.368,320.907C674.186,359.867,674.186,406.133,674.186,452.4C674.186,498.667,674.186,544.933,674.186,596.7C674.186,648.467,674.186,705.733,674.186,763C674.186,820.267,674.186,877.533,674.186,932.967C674.186,988.4,674.186,1042,674.186,1095.6C674.186,1149.2,674.186,1202.8,674.186,1258.233C674.186,1313.667,674.186,1370.933,674.186,1428.2C674.186,1485.467,674.186,1542.733,733.026,1587.725C791.865,1632.716,909.544,1665.432,968.383,1681.79L1027.223,1698.147" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M457.092,162.106L373.667,187.355C290.241,212.604,123.39,263.102,39.964,311.484C-43.462,359.867,-43.462,406.133,-43.462,452.4C-43.462,498.667,-43.462,544.933,-43.462,596.7C-43.462,648.467,-43.462,705.733,-43.462,763C-43.462,820.267,-43.462,877.533,-43.462,932.967C-43.462,988.4,-43.462,1042,-43.462,1095.6C-43.462,1149.2,-43.462,1202.8,20.218,1252.657C83.897,1302.514,211.256,1348.628,274.935,1371.685L338.615,1394.742" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M457.092,203.606L437.192,221.939C417.291,240.271,377.49,276.935,357.589,318.401C337.689,359.867,337.689,406.133,337.689,452.4C337.689,498.667,337.689,544.933,337.689,596.7C337.689,648.467,337.689,705.733,337.689,763C337.689,820.267,337.689,877.533,337.689,932.967C337.689,988.4,337.689,1042,337.689,1095.6C337.689,1149.2,337.689,1202.8,342.216,1237.933C346.743,1273.067,355.797,1289.733,360.325,1298.067L364.852,1306.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M1050.517,499.673L1026.538,514.928C1002.56,530.182,954.602,560.691,950.683,591.741C946.764,622.791,986.884,654.381,1006.943,670.177L1027.003,685.972" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M1161.41,1695.364L1211.157,1679.47C1260.904,1663.576,1360.399,1631.788,1409.053,1600.227C1457.707,1568.667,1455.521,1537.333,1454.428,1521.667L1453.335,1506" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M1453.335,1350.4L1454.428,1334.733C1455.521,1319.067,1457.707,1287.733,1458.8,1245.267C1459.893,1202.8,1459.893,1149.2,1459.893,1095.6C1459.893,1042,1459.893,988.4,1420.353,941.326C1380.812,894.253,1301.731,853.705,1262.191,833.431L1222.65,813.158" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M1379.055,1457.399L1323.013,1481.166C1266.97,1504.933,1154.885,1552.466,1102.518,1584.567C1050.151,1616.667,1057.502,1633.333,1061.177,1641.667L1064.853,1650" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M1498.62,1350.4L1508.833,1334.733C1519.045,1319.067,1539.469,1287.733,1467.584,1248.726C1395.699,1209.718,1231.505,1163.035,1149.408,1139.694L1067.311,1116.353" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M1027.003,825.922L998.791,844.069C970.58,862.215,914.156,898.507,896.543,929.131C878.929,959.754,900.126,984.709,910.724,997.186L921.322,1009.663" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M1160.275,641.2L1162.7,632.867C1165.125,624.533,1169.976,607.867,1168.739,589.367C1167.502,570.867,1160.177,550.533,1156.515,540.367L1152.853,530.2" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M1220.584,884.8L1227.135,893.133C1233.687,901.467,1246.79,918.133,1253.342,953.267C1259.893,988.4,1259.893,1042,1259.893,1095.6C1259.893,1149.2,1259.893,1202.8,1279.754,1247.748C1299.614,1292.695,1339.335,1328.991,1359.195,1347.138L1379.055,1365.286" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M877.174,1361.4L882.267,1343.9C887.36,1326.4,897.547,1291.4,907.127,1265.567C916.707,1239.733,925.681,1223.067,930.169,1214.733L934.656,1206.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M1122.702,1350.4L1128.9,1334.733C1135.099,1319.067,1147.496,1287.733,1138.264,1257.081C1129.032,1226.43,1098.172,1196.459,1082.741,1181.474L1067.311,1166.489" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M1067.311,1127.707L1116.075,1149.156C1164.838,1170.605,1262.366,1213.502,1319.156,1250.618C1375.945,1287.733,1391.998,1319.067,1400.024,1334.733L1408.05,1350.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M1024.644,984.8L1026.925,976.467C1029.206,968.133,1033.767,951.467,1040.244,934.8C1046.721,918.133,1055.112,901.467,1059.308,893.133L1063.503,884.8" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M921.322,1158.508L902.39,1174.823C883.459,1191.138,845.596,1223.769,831.758,1257.585C817.919,1291.4,828.106,1326.4,833.199,1343.9L838.292,1361.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ZERO_OR_MORE_START)" marker-end="url(#ONLY_ONE_END)" d="M1015.34,1206.4L1016.921,1214.733C1018.502,1223.067,1021.664,1239.733,1029.364,1263.733C1037.063,1287.733,1049.3,1319.067,1055.418,1334.733L1061.537,1350.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M921.322,1116.687L840.716,1139.972C760.111,1163.258,598.9,1209.829,517.971,1241.448C437.042,1273.067,436.395,1289.733,436.072,1298.067L435.748,1306.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M921.322,1121.305L857.383,1143.821C793.444,1166.337,665.567,1211.368,596.454,1242.217C527.341,1273.067,516.993,1289.733,511.819,1298.067L506.644,1306.4" class="er relationshipLine"/>
+    <path style="stroke: gray; fill: none;" marker-start="url(#ONLY_ONE_START)" marker-end="url(#ZERO_OR_MORE_END)" d="M120.807,263.6L121.278,271.933C121.749,280.267,122.69,296.933,123.161,313.6C123.632,330.267,123.632,346.933,123.632,355.267L123.632,363.6" class="er relationshipLine"/>
+    <g transform="translate(457.0924987792969,53 )" id="entity-User-818c511a-4a32-5484-ba70-875d765a9175">
+      <rect height="177.60000038146973" width="134.18730449676514" y="0" x="0" class="er entityBox"/>
+      <text transform="translate(67.09365224838257,11.800000190734863)" style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175" class="er entityLabel">User</text>
+      <rect height="22" width="53.69560623168945" y="23.600000381469727" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-1-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="23.600000381469727" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-1-name" class="er entityLabel">id</text>
+      <rect height="22" width="22.087695121765137" y="23.600000381469727" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-1-key" class="er entityLabel">PK</text>
+      <rect height="22" width="53.69560623168945" y="45.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-2-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="45.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-2-name" class="er entityLabel">email</text>
+      <rect height="22" width="22.087695121765137" y="45.60000038146973" x="112.099609375" class="er attributeBoxEven"/>
+      <text transform="translate(117.099609375,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-2-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="67.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-3-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="67.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-3-name" class="er entityLabel">name</text>
+      <rect height="22" width="22.087695121765137" y="67.60000038146973" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-3-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="89.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-4-type" class="er entityLabel">Role</text>
+      <rect height="22" width="58.40400314331055" y="89.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-4-name" class="er entityLabel">role</text>
+      <rect height="22" width="22.087695121765137" y="89.60000038146973" x="112.099609375" class="er attributeBoxEven"/>
+      <text transform="translate(117.099609375,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-4-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="111.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-5-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="111.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-5-name" class="er entityLabel">clerkId</text>
+      <rect height="22" width="22.087695121765137" y="111.60000038146973" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-5-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="133.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-6-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="58.40400314331055" y="133.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-6-name" class="er entityLabel">createdAt</text>
+      <rect height="22" width="22.087695121765137" y="133.60000038146973" x="112.099609375" class="er attributeBoxEven"/>
+      <text transform="translate(117.099609375,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-6-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="155.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-7-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="58.40400314331055" y="155.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-7-name" class="er entityLabel">updatedAt</text>
+      <rect height="22" width="22.087695121765137" y="155.60000038146973" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-User-818c511a-4a32-5484-ba70-875d765a9175-attr-7-key" class="er entityLabel"/>
+    </g>
+    <g transform="translate(1050.5172004699707,374.6000061035156 )" id="entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97">
+      <rect height="155.60000038146973" width="148.6188497543335" y="0" x="0" class="er entityBox"/>
+      <text transform="translate(74.30942487716675,11.800000190734863)" style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97" class="er entityLabel">Teacher</text>
+      <rect height="22" width="53.69560623168945" y="23.600000381469727" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-1-type" class="er entityLabel">String</text>
+      <rect height="22" width="72.8355484008789" y="23.600000381469727" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-1-name" class="er entityLabel">id</text>
+      <rect height="22" width="22.087695121765137" y="23.600000381469727" x="126.53115463256836" class="er attributeBoxOdd"/>
+      <text transform="translate(131.53115463256836,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-1-key" class="er entityLabel">PK</text>
+      <rect height="22" width="53.69560623168945" y="45.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-2-type" class="er entityLabel">String</text>
+      <rect height="22" width="72.8355484008789" y="45.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-2-name" class="er entityLabel">userId</text>
+      <rect height="22" width="22.087695121765137" y="45.60000038146973" x="126.53115463256836" class="er attributeBoxEven"/>
+      <text transform="translate(131.53115463256836,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-2-key" class="er entityLabel">FK</text>
+      <rect height="22" width="53.69560623168945" y="67.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-3-type" class="er entityLabel">String</text>
+      <rect height="22" width="72.8355484008789" y="67.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-3-name" class="er entityLabel">department</text>
+      <rect height="22" width="22.087695121765137" y="67.60000038146973" x="126.53115463256836" class="er attributeBoxOdd"/>
+      <text transform="translate(131.53115463256836,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-3-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="89.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-4-type" class="er entityLabel">String</text>
+      <rect height="22" width="72.8355484008789" y="89.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-4-name" class="er entityLabel">specialization</text>
+      <rect height="22" width="22.087695121765137" y="89.60000038146973" x="126.53115463256836" class="er attributeBoxEven"/>
+      <text transform="translate(131.53115463256836,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-4-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="111.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-5-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="72.8355484008789" y="111.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-5-name" class="er entityLabel">createdAt</text>
+      <rect height="22" width="22.087695121765137" y="111.60000038146973" x="126.53115463256836" class="er attributeBoxOdd"/>
+      <text transform="translate(131.53115463256836,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-5-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="133.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-6-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="72.8355484008789" y="133.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-6-name" class="er entityLabel">updatedAt</text>
+      <rect height="22" width="22.087695121765137" y="133.60000038146973" x="126.53115463256836" class="er attributeBoxEven"/>
+      <text transform="translate(131.53115463256836,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Teacher-ed6f2787-ae2d-5cf4-94cc-4a1510120b97-attr-6-key" class="er entityLabel"/>
+    </g>
+    <g transform="translate(1027.2228698730469,1650.0000305175781 )" id="entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5">
+      <rect height="133.60000038146973" width="134.18730449676514" y="0" x="0" class="er entityBox"/>
+      <text transform="translate(67.09365224838257,11.800000190734863)" style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5" class="er entityLabel">Student</text>
+      <rect height="22" width="53.69560623168945" y="23.600000381469727" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-1-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="23.600000381469727" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-1-name" class="er entityLabel">id</text>
+      <rect height="22" width="22.087695121765137" y="23.600000381469727" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-1-key" class="er entityLabel">PK</text>
+      <rect height="22" width="53.69560623168945" y="45.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-2-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="45.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-2-name" class="er entityLabel">userId</text>
+      <rect height="22" width="22.087695121765137" y="45.60000038146973" x="112.099609375" class="er attributeBoxEven"/>
+      <text transform="translate(117.099609375,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-2-key" class="er entityLabel">FK</text>
+      <rect height="22" width="53.69560623168945" y="67.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-3-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="67.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-3-name" class="er entityLabel">classId</text>
+      <rect height="22" width="22.087695121765137" y="67.60000038146973" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-3-key" class="er entityLabel">FK</text>
+      <rect height="22" width="53.69560623168945" y="89.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-4-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="58.40400314331055" y="89.60000038146973" x="53.69560623168945" class="er attributeBoxEven"/>
+      <text transform="translate(58.69560623168945,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-4-name" class="er entityLabel">createdAt</text>
+      <rect height="22" width="22.087695121765137" y="89.60000038146973" x="112.099609375" class="er attributeBoxEven"/>
+      <text transform="translate(117.099609375,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-4-key" class="er entityLabel"/>
+      <rect height="22" width="53.69560623168945" y="111.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-5-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="58.40400314331055" y="111.60000038146973" x="53.69560623168945" class="er attributeBoxOdd"/>
+      <text transform="translate(58.69560623168945,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-5-name" class="er entityLabel">updatedAt</text>
+      <rect height="22" width="22.087695121765137" y="111.60000038146973" x="112.099609375" class="er attributeBoxOdd"/>
+      <text transform="translate(117.099609375,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Student-8f7f7a56-d9f8-57b5-bb12-4f40575e65f5-attr-5-key" class="er entityLabel"/>
+    </g>
+    <g transform="translate(338.6148910522461,1306.4000244140625 )" id="entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3">
+      <rect height="243.60000038146973" width="184.8106451034546" y="0" x="0" class="er entityBox"/>
+      <text transform="translate(92.4053225517273,11.800000190734863)" style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3" class="er entityLabel">SwapRequest</text>
+      <rect height="22" width="98.3423843383789" y="23.600000381469727" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-1-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="23.600000381469727" x="98.3423843383789" class="er attributeBoxOdd"/>
+      <text transform="translate(103.3423843383789,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-1-name" class="er entityLabel">id</text>
+      <rect height="22" width="22.087695121765137" y="23.600000381469727" x="162.72294998168945" class="er attributeBoxOdd"/>
+      <text transform="translate(167.72294998168945,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-1-key" class="er entityLabel">PK</text>
+      <rect height="22" width="98.3423843383789" y="45.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-2-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="45.60000038146973" x="98.3423843383789" class="er attributeBoxEven"/>
+      <text transform="translate(103.3423843383789,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-2-name" class="er entityLabel">requesterId</text>
+      <rect height="22" width="22.087695121765137" y="45.60000038146973" x="162.72294998168945" class="er attributeBoxEven"/>
+      <text transform="translate(167.72294998168945,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-2-key" class="er entityLabel">FK</text>
+      <rect height="22" width="98.3423843383789" y="67.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-3-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="67.60000038146973" x="98.3423843383789" class="er attributeBoxOdd"/>
+      <text transform="translate(103.3423843383789,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-3-name" class="er entityLabel">targetId</text>
+      <rect height="22" width="22.087695121765137" y="67.60000038146973" x="162.72294998168945" class="er attributeBoxOdd"/>
+      <text transform="translate(167.72294998168945,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-3-key" class="er entityLabel">FK</text>
+      <rect height="22" width="98.3423843383789" y="89.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-4-type" class="er entityLabel">SwapRequestStatus</text>
+      <rect height="22" width="64.38056564331055" y="89.60000038146973" x="98.3423843383789" class="er attributeBoxEven"/>
+      <text transform="translate(103.3423843383789,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-4-name" class="er entityLabel">status</text>
+      <rect height="22" width="22.087695121765137" y="89.60000038146973" x="162.72294998168945" class="er attributeBoxEven"/>
+      <text transform="translate(167.72294998168945,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-4-key" class="er entityLabel"/>
+      <rect height="22" width="98.3423843383789" y="111.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-5-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="111.60000038146973" x="98.3423843383789" class="er attributeBoxOdd"/>
+      <text transform="translate(103.3423843383789,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-5-name" class="er entityLabel">fromEntryId</text>
+      <rect height="22" width="22.087695121765137" y="111.60000038146973" x="162.72294998168945" class="er attributeBoxOdd"/>
+      <text transform="translate(167.72294998168945,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-5-key" class="er entityLabel">FK</text>
+      <rect height="22" width="98.3423843383789" y="133.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-6-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="133.60000038146973" x="98.3423843383789" class="er attributeBoxEven"/>
+      <text transform="translate(103.3423843383789,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-6-name" class="er entityLabel">toEntryId</text>
+      <rect height="22" width="22.087695121765137" y="133.60000038146973" x="162.72294998168945" class="er attributeBoxEven"/>
+      <text transform="translate(167.72294998168945,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-6-key" class="er entityLabel">FK</text>
+      <rect height="22" width="98.3423843383789" y="155.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-7-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="155.60000038146973" x="98.3423843383789" class="er attributeBoxOdd"/>
+      <text transform="translate(103.3423843383789,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-7-name" class="er entityLabel">reason</text>
+      <rect height="22" width="22.087695121765137" y="155.60000038146973" x="162.72294998168945" class="er attributeBoxOdd"/>
+      <text transform="translate(167.72294998168945,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-7-key" class="er entityLabel"/>
+      <rect height="22" width="98.3423843383789" y="177.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,188.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-8-type" class="er entityLabel">String</text>
+      <rect height="22" width="64.38056564331055" y="177.60000038146973" x="98.3423843383789" class="er attributeBoxEven"/>
+      <text transform="translate(103.3423843383789,188.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-8-name" class="er entityLabel">adminNotes</text>
+      <rect height="22" width="22.087695121765137" y="177.60000038146973" x="162.72294998168945" class="er attributeBoxEven"/>
+      <text transform="translate(167.72294998168945,188.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-8-key" class="er entityLabel"/>
+      <rect height="22" width="98.3423843383789" y="199.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,210.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-9-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="64.38056564331055" y="199.60000038146973" x="98.3423843383789" class="er attributeBoxOdd"/>
+      <text transform="translate(103.3423843383789,210.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-9-name" class="er entityLabel">createdAt</text>
+      <rect height="22" width="22.087695121765137" y="199.60000038146973" x="162.72294998168945" class="er attributeBoxOdd"/>
+      <text transform="translate(167.72294998168945,210.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-9-key" class="er entityLabel"/>
+      <rect height="22" width="98.3423843383789" y="221.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,232.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-10-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="64.38056564331055" y="221.60000038146973" x="98.3423843383789" class="er attributeBoxEven"/>
+      <text transform="translate(103.3423843383789,232.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-10-name" class="er entityLabel">updatedAt</text>
+      <rect height="22" width="22.087695121765137" y="221.60000038146973" x="162.72294998168945" class="er attributeBoxEven"/>
+      <text transform="translate(167.72294998168945,232.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-SwapRequest-8f211cd4-b909-5590-85e3-f68a21480ca3-attr-10-key" class="er entityLabel"/>
+    </g>
+    <g transform="translate(1027.0028953552246,641.2000122070312 )" id="entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de">
+      <rect height="243.60000038146973" width="195.64746379852295" y="0" x="0" class="er entityBox"/>
+      <text transform="translate(97.82373189926147,11.800000190734863)" style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de" class="er entityLabel">Subject</text>
+      <rect height="22" width="85.7847671508789" y="23.600000381469727" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-1-type" class="er entityLabel">String</text>
+      <rect height="22" width="87.7750015258789" y="23.600000381469727" x="85.7847671508789" class="er attributeBoxOdd"/>
+      <text transform="translate(90.7847671508789,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-1-name" class="er entityLabel">id</text>
+      <rect height="22" width="22.087695121765137" y="23.600000381469727" x="173.5597686767578" class="er attributeBoxOdd"/>
+      <text transform="translate(178.5597686767578,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-1-key" class="er entityLabel">PK</text>
+      <rect height="22" width="85.7847671508789" y="45.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-2-type" class="er entityLabel">String</text>
+      <rect height="22" width="87.7750015258789" y="45.60000038146973" x="85.7847671508789" class="er attributeBoxEven"/>
+      <text transform="translate(90.7847671508789,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-2-name" class="er entityLabel">name</text>
+      <rect height="22" width="22.087695121765137" y="45.60000038146973" x="173.5597686767578" class="er attributeBoxEven"/>
+      <text transform="translate(178.5597686767578,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-2-key" class="er entityLabel"/>
+      <rect height="22" width="85.7847671508789" y="67.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-3-type" class="er entityLabel">SubjectCategory</text>
+      <rect height="22" width="87.7750015258789" y="67.60000038146973" x="85.7847671508789" class="er attributeBoxOdd"/>
+      <text transform="translate(90.7847671508789,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-3-name" class="er entityLabel">category</text>
+      <rect height="22" width="22.087695121765137" y="67.60000038146973" x="173.5597686767578" class="er attributeBoxOdd"/>
+      <text transform="translate(178.5597686767578,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-3-key" class="er entityLabel"/>
+      <rect height="22" width="85.7847671508789" y="89.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-4-type" class="er entityLabel">Boolean</text>
+      <rect height="22" width="87.7750015258789" y="89.60000038146973" x="85.7847671508789" class="er attributeBoxEven"/>
+      <text transform="translate(90.7847671508789,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-4-name" class="er entityLabel">multiSlotAllowed</text>
+      <rect height="22" width="22.087695121765137" y="89.60000038146973" x="173.5597686767578" class="er attributeBoxEven"/>
+      <text transform="translate(178.5597686767578,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-4-key" class="er entityLabel"/>
+      <rect height="22" width="85.7847671508789" y="111.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-5-type" class="er entityLabel">String</text>
+      <rect height="22" width="87.7750015258789" y="111.60000038146973" x="85.7847671508789" class="er attributeBoxOdd"/>
+      <text transform="translate(90.7847671508789,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-5-name" class="er entityLabel">teacherId</text>
+      <rect height="22" width="22.087695121765137" y="111.60000038146973" x="173.5597686767578" class="er attributeBoxOdd"/>
+      <text transform="translate(178.5597686767578,122.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-5-key" class="er entityLabel">FK</text>
+      <rect height="22" width="85.7847671508789" y="133.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-6-type" class="er entityLabel">String</text>
+      <rect height="22" width="87.7750015258789" y="133.60000038146973" x="85.7847671508789" class="er attributeBoxEven"/>
+      <text transform="translate(90.7847671508789,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-6-name" class="er entityLabel">classId</text>
+      <rect height="22" width="22.087695121765137" y="133.60000038146973" x="173.5597686767578" class="er attributeBoxEven"/>
+      <text transform="translate(178.5597686767578,144.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-6-key" class="er entityLabel">FK</text>
+      <rect height="22" width="85.7847671508789" y="155.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-7-type" class="er entityLabel">IBGroup</text>
+      <rect height="22" width="87.7750015258789" y="155.60000038146973" x="85.7847671508789" class="er attributeBoxOdd"/>
+      <text transform="translate(90.7847671508789,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-7-name" class="er entityLabel">ibGroup</text>
+      <rect height="22" width="22.087695121765137" y="155.60000038146973" x="173.5597686767578" class="er attributeBoxOdd"/>
+      <text transform="translate(178.5597686767578,166.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-7-key" class="er entityLabel"/>
+      <rect height="22" width="85.7847671508789" y="177.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,188.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-8-type" class="er entityLabel">IBLevel</text>
+      <rect height="22" width="87.7750015258789" y="177.60000038146973" x="85.7847671508789" class="er attributeBoxEven"/>
+      <text transform="translate(90.7847671508789,188.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-8-name" class="er entityLabel">level</text>
+      <rect height="22" width="22.087695121765137" y="177.60000038146973" x="173.5597686767578" class="er attributeBoxEven"/>
+      <text transform="translate(178.5597686767578,188.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-8-key" class="er entityLabel"/>
+      <rect height="22" width="85.7847671508789" y="199.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,210.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-9-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="87.7750015258789" y="199.60000038146973" x="85.7847671508789" class="er attributeBoxOdd"/>
+      <text transform="translate(90.7847671508789,210.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-9-name" class="er entityLabel">createdAt</text>
+      <rect height="22" width="22.087695121765137" y="199.60000038146973" x="173.5597686767578" class="er attributeBoxEven"/>
+      <text transform="translate(178.5597686767578,210.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-9-key" class="er entityLabel"/>
+      <rect height="22" width="85.7847671508789" y="221.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,232.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-10-type" class="er entityLabel">DateTime</text>
+      <rect height="22" width="87.7750015258789" y="221.60000038146973" x="85.7847671508789" class="er attributeBoxEven"/>
+      <text transform="translate(90.7847671508789,232.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-10-name" class="er entityLabel">updatedAt</text>
+      <rect height="22" width="22.087695121765137" y="221.60000038146973" x="173.5597686767578" class="er attributeBoxEven"/>
+      <text transform="translate(178.5597686767578,232.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Subject-6517b414-ef1d-5647-8292-82448c2e16de-attr-10-key" class="er entityLabel"/>
+    </g>
+    <g transform="translate(1379.0554122924805,1350.4000244140625 )" id="entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17">
+      <rect height="155.60000038146973" width="137.70410060882568" y="0" x="0" class="er entityBox"/>
+      <text transform="translate(68.85205030441284,11.800000190734863)" style="dominant-baseline: middle; text-anchor: middle; font-size: 12px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17" class="er entityLabel">Class</text>
+      <rect height="22" width="57.21240234375" y="23.600000381469727" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-1-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="23.600000381469727" x="57.21240234375" class="er attributeBoxOdd"/>
+      <text transform="translate(62.21240234375,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-1-name" class="er entityLabel">id</text>
+      <rect height="22" width="22.087695121765137" y="23.600000381469727" x="115.61640548706055" class="er attributeBoxOdd"/>
+      <text transform="translate(120.61640548706055,34.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-1-key" class="er entityLabel">PK</text>
+      <rect height="22" width="57.21240234375" y="45.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-2-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="45.60000038146973" x="57.21240234375" class="er attributeBoxEven"/>
+      <text transform="translate(62.21240234375,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-2-name" class="er entityLabel">name</text>
+      <rect height="22" width="22.087695121765137" y="45.60000038146973" x="115.61640548706055" class="er attributeBoxEven"/>
+      <text transform="translate(120.61640548706055,56.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-2-key" class="er entityLabel"/>
+      <rect height="22" width="57.21240234375" y="67.60000038146973" x="0" class="er attributeBoxOdd"/>
+      <text transform="translate(5,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-3-type" class="er entityLabel">ClassLevel</text>
+      <rect height="22" width="58.40400314331055" y="67.60000038146973" x="57.21240234375" class="er attributeBoxOdd"/>
+      <text transform="translate(62.21240234375,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-3-name" class="er entityLabel">level</text>
+      <rect height="22" width="22.087695121765137" y="67.60000038146973" x="115.61640548706055" class="er attributeBoxOdd"/>
+      <text transform="translate(120.61640548706055,78.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-3-key" class="er entityLabel"/>
+      <rect height="22" width="57.21240234375" y="89.60000038146973" x="0" class="er attributeBoxEven"/>
+      <text transform="translate(5,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-4-type" class="er entityLabel">String</text>
+      <rect height="22" width="58.40400314331055" y="89.60000038146973" x="57.21240234375" class="er attributeBoxEven"/>
+      <text transform="translate(62.21240234375,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda1-500b-81e8-fe5cfcc9ca17-attr-4-name" class="er entityLabel">section</text>
+      <rect height="22" width="22.087695121765137" y="89.60000038146973" x="115.61640548706055" class="er attributeBoxEven"/>
+      <text transform="translate(120.61640548706055,100.60000038146973)" style="dominant-baseline: middle; font-size: 10.2px;" y="0" x="0" id="text-entity-Class-72a8fe3b-dda

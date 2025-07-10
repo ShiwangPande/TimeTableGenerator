@@ -92,8 +92,8 @@ export default function StudentPrintPage() {
 
   return (
     <div className="p-8 print:p-2">
-      <h1 className="text-3xl font-bold mb-2">My Class Timetable</h1>
-      <p className="mb-4 text-muted-foreground">Class: {user.student.class.name} {user.student.class.section}</p>
+      <h1 className="text-3xl font-bold mb-2 text-orange-900">My Class Timetable</h1>
+      <p className="mb-4 text-orange-700">Class: {user.student.class.name} {user.student.class.section}</p>
       
       {timetableEntries.length === 0 ? (
         <div className="text-center text-muted-foreground py-8">No timetable entries found.</div>
@@ -123,7 +123,7 @@ export default function StudentPrintPage() {
       )}
       
       <button 
-        className="mt-8 px-6 py-2 bg-blue-600 text-white rounded print:hidden hover:bg-blue-700 transition-colors" 
+        className="mt-8 px-6 py-2 bg-orange-500 text-white rounded print:hidden hover:bg-red-400 transition-colors" 
         onClick={() => window.print()}
       >
         Print Timetable

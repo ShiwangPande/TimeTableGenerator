@@ -11,7 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { RefreshCw, Calendar, Filter } from "lucide-react"
+import { RefreshCw, Calendar, Filter, Printer } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
 interface FilterState {
@@ -134,6 +134,18 @@ export default function AdminTimetablePage() {
               >
                 <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
                 {refreshing ? 'Refreshing...' : 'Refresh'}
+              </Button>
+              <Button asChild variant="outline" className="gap-2">
+                <a href="/api/export" download>
+                  <Calendar className="h-4 w-4 text-green-600" />
+                  Export Timetable (Excel)
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="gap-2">
+                <a href="/api/print" target="_blank" rel="noopener noreferrer">
+                  <Printer className="h-4 w-4 text-blue-600" />
+                  Print Timetable
+                </a>
               </Button>
               <MultiSubjectAssignment onSuccess={handleSubjectAssigned} />
             </div>

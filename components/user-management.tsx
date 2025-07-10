@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/select"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
+import { Trash2 } from 'lucide-react';
 
 interface User {
   id: string
@@ -54,6 +55,7 @@ interface UserManagementProps {
 
 export function UserManagement({ users }: UserManagementProps) {
   const [updatingUsers, setUpdatingUsers] = useState<Set<string>>(new Set())
+  const [deletingUsers, setDeletingUsers] = useState<Set<string>>(new Set())
   const router = useRouter()
 
   const handleRoleChange = async (userId: string, newRole: Role) => {
@@ -83,6 +85,28 @@ export function UserManagement({ users }: UserManagementProps) {
         newSet.delete(userId)
         return newSet
       })
+    }
+  }
+
+  const handleDeleteUser = async (userId: string) => {
+    if (!window.confirm('Are you sure you want to delete this user? This action cannot be undone.')) return;
+    setDeletingUsers(prev => new Set(prev).add(userId));
+    try {
+      const response = await fetch(`/api/users/${userId}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) throw new Error('Failed to delete user');
+      toast.success('User deleted successfully');
+      router.refresh();
+    } catch (error) {
+      console.error('Error deleting user:', error);
+      toast.error('Failed to delete user');
+    } finally {
+      setDeletingUsers(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(userId);
+        return newSet;
+      });
     }
   }
 
@@ -147,20 +171,31 @@ export function UserManagement({ users }: UserManagementProps) {
                 {formatDate(user.createdAt)}
               </TableCell>
               <TableCell>
-                <Select
-                  value={user.role}
-                  onValueChange={(value) => handleRoleChange(user.id, value as Role)}
-                  disabled={updatingUsers.has(user.id)}
-                >
-                  <SelectTrigger className="w-32">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value={Role.ADMIN}>Admin</SelectItem>
-                    <SelectItem value={Role.TEACHER}>Teacher</SelectItem>
-                    <SelectItem value={Role.STUDENT}>Student</SelectItem>
-                  </SelectContent>
-                </Select>
+                <div className="flex gap-2 items-center">
+                  <Select
+                    value={user.role}
+                    onValueChange={(value) => handleRoleChange(user.id, value as Role)}
+                    disabled={updatingUsers.has(user.id) || deletingUsers.has(user.id)}
+                  >
+                    <SelectTrigger className="w-32">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value={Role.ADMIN}>Admin</SelectItem>
+                      <SelectItem value={Role.TEACHER}>Teacher</SelectItem>
+                      <SelectItem value={Role.STUDENT}>Student</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Button
+                    size="icon"
+                    variant="destructive"
+                    onClick={() => handleDeleteUser(user.id)}
+                    disabled={deletingUsers.has(user.id) || updatingUsers.has(user.id)}
+                    title="Delete user"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+                </div>
               </TableCell>
             </TableRow>
           ))}

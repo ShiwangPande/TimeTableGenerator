@@ -1,29 +1,10 @@
-export const dynamic = 'force-dynamic';
-import { type NextRequest, NextResponse } from "next/server"
-import { getCurrentUser } from "@/lib/auth"
+import { NextResponse } from "next/server";
+import { getCurrentUser } from "@/lib/auth";
 
-export async function GET(request: NextRequest) {
-  try {
-    const user = await getCurrentUser()
-    
-    if (!user) {
-      return NextResponse.json(
-        { error: "Not authenticated" },
-        { status: 401 }
-      )
-    }
-
-    return NextResponse.json({
-      id: user.id,
-      role: user.role,
-      name: user.name,
-      email: user.email
-    })
-  } catch (error) {
-    console.error("Get current user error:", error)
-    return NextResponse.json(
-      { error: "Failed to get current user" },
-      { status: 500 }
-    )
+export async function GET() {
+  const user = await getCurrentUser();
+  if (!user) {
+    return NextResponse.json({ role: null });
   }
+  return NextResponse.json({ role: user.role });
 } 

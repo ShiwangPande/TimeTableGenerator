@@ -1,12 +1,12 @@
 export const dynamic = 'force-dynamic';
 import { type NextRequest, NextResponse } from "next/server"
-import { requireRole } from "@/lib/auth"
+import { requireAuth } from "@/lib/auth"
 import { Role } from "@prisma/client"
 import { prisma } from "@/lib/prisma"
 
 export async function GET(request: NextRequest) {
   try {
-    await requireRole(Role.ADMIN)
+    await requireAuth() // Only require authentication, not a specific role
     const { searchParams } = new URL(request.url)
     
     // Check if we want distinct values for filters
@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
     }
     
     // Get all classes with their details
-    const classes = await prisma.class.findMany({
+    const classesRaw = await prisma.class.findMany({
       include: {
         subjects: {
           include: {
@@ -52,12 +52,24 @@ export async function GET(request: NextRequest) {
         { section: 'asc' },
       ],
     })
-    
+
+    // Filter out subjects with missing teacher or missing teacher.user
+    const classes = classesRaw.map(cls => ({
+      ...cls,
+      subjects: cls.subjects.filter(subj => subj.teacher && subj.teacher.user),
+    }))
+
     return NextResponse.json(classes)
   } catch (error) {
     console.error("Get classes error:", error)
+    // Improved error response for debugging
+    let message = "Failed to fetch classes"
+    if (process.env.NODE_ENV !== 'production' && error instanceof Error) {
+      message += ": " + error.message
+      if (error.stack) message += "\n" + error.stack
+    }
     return NextResponse.json(
-      { error: "Failed to fetch classes" },
+      { error: message },
       { status: 500 }
     )
   }

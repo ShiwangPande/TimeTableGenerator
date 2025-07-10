@@ -279,22 +279,22 @@ export function TourGuide({ role, isOpen, onClose, onComplete }: TourGuideProps)
   // Role configuration for styling
   const roleConfig = {
     ADMIN: {
-      color: "from-blue-500 to-purple-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
-      textColor: "text-blue-700"
+      color: "from-orange-400 to-red-400",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
+      textColor: "text-orange-700"
     },
     TEACHER: {
-      color: "from-green-500 to-emerald-600",
-      bgColor: "bg-green-50",
-      borderColor: "border-green-200",
-      textColor: "text-green-700"
+      color: "from-amber-400 to-orange-400",
+      bgColor: "bg-amber-50",
+      borderColor: "border-amber-200",
+      textColor: "text-amber-700"
     },
     STUDENT: {
-      color: "from-purple-500 to-pink-600",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200",
-      textColor: "text-purple-700"
+      color: "from-red-400 to-orange-400",
+      bgColor: "bg-red-50",
+      borderColor: "border-red-200",
+      textColor: "text-red-700"
     }
   }
 
@@ -437,7 +437,7 @@ export function TourGuide({ role, isOpen, onClose, onComplete }: TourGuideProps)
           repeat: Infinity,
           repeatType: "reverse"
         }}
-        className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10"
+        className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-400/10 to-yellow-300/10"
         style={{
           backgroundSize: '200% 200%'
         }}

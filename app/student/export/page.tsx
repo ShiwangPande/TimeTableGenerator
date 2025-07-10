@@ -73,8 +73,8 @@ export default function StudentExportPage() {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Download My Timetable</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-3xl font-bold tracking-tight text-orange-900">Download My Timetable</h1>
+            <p className="text-orange-700">
               Export your class schedule in various formats
             </p>
           </div>
@@ -97,8 +97,8 @@ export default function StudentExportPage() {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Download My Timetable</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-3xl font-bold tracking-tight text-orange-900">Download My Timetable</h1>
+            <p className="text-orange-700">
               Export your class schedule in various formats
             </p>
           </div>
@@ -122,8 +122,8 @@ export default function StudentExportPage() {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">Download My Timetable</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-3xl font-bold tracking-tight text-orange-900">Download My Timetable</h1>
+            <p className="text-orange-700">
               Export your class schedule in various formats
             </p>
           </div>
@@ -176,8 +176,8 @@ export default function StudentExportPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Download My Timetable</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-3xl font-bold tracking-tight text-orange-900">Download My Timetable</h1>
+          <p className="text-orange-700">
             Export your class schedule in various formats
           </p>
         </div>

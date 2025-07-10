@@ -20,8 +20,8 @@ body {
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 24 94% 60%; /* Lighter, vibrant orange */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -41,12 +41,20 @@ body {
     --radius: 0.5rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-primary: 24 94% 50%; /* Match primary orange */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 100% 95%; /* Light orange accent */
+    --sidebar-accent-foreground: 24 94% 50%;
+    --sidebar-border: 24 100% 90%;
+    --sidebar-ring: 24 94% 50%;
+    --school-primary: 24 94% 60%; /* Lighter orange */
+    --school-secondary: 0 84% 70%; /* Lighter red */
+    --school-accent: 12 90% 60%; /* Orange-red accent */
+    --school-gold: 42 95% 65%; /* Lighter gold */
+    --school-purple: 12 90% 60%; /* Use orange-red instead of purple */
+    --subject-individual: 24 94% 60%; /* Orange */
+    --subject-societies: 0 84% 70%; /* Red */
+    --subject-sciences: 42 95% 65%; /* Lighter amber */
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -90,5 +98,54 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Ensure basic buttons are visible */
+.btn:not([class*="bg-"]), button:not([class*="bg-"]) {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border: 1px solid hsl(var(--primary)) !important;
+}
+
+/* Print styles: hide sidebar, nav, and print:hidden elements, optimize timetable print layout */
+@media print {
+  .sidebar, .top-nav, .print\:hidden, nav, header, footer {
+    display: none !important;
+  }
+  body, html {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    min-width: 0 !important;
+  }
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+  .print\:w-full {
+    width: 100vw !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+  .print\:border-none {
+    border: none !important;
+  }
+  .print\:bg-white {
+    background: #fff !important;
+  }
+  /* Show only .print-only when printing */
+  body *:not(.print-only) {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+    width: 100vw !important;
+    margin: 0 auto !important;
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
   }
 }

@@ -16,28 +16,28 @@ interface TourButtonProps {
 
 const roleConfig = {
   ADMIN: {
-    gradient: "from-blue-500 to-purple-600",
-    bgColor: "bg-blue-50",
-    borderColor: "border-blue-200",
-    textColor: "text-blue-700",
-    hoverColor: "hover:bg-blue-100",
-    badgeColor: "bg-blue-500"
+    gradient: "from-orange-500 to-red-500",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    textColor: "text-orange-700",
+    hoverColor: "hover:bg-orange-100",
+    badgeColor: "bg-orange-500"
   },
   TEACHER: {
-    gradient: "from-green-500 to-emerald-600",
-    bgColor: "bg-green-50",
-    borderColor: "border-green-200",
-    textColor: "text-green-700",
-    hoverColor: "hover:bg-green-100",
-    badgeColor: "bg-green-500"
+    gradient: "from-amber-500 to-orange-500",
+    bgColor: "bg-amber-50",
+    borderColor: "border-amber-200",
+    textColor: "text-amber-700",
+    hoverColor: "hover:bg-amber-100",
+    badgeColor: "bg-amber-500"
   },
   STUDENT: {
-    gradient: "from-purple-500 to-pink-600",
-    bgColor: "bg-purple-50",
-    borderColor: "border-purple-200",
-    textColor: "text-purple-700",
-    hoverColor: "hover:bg-purple-100",
-    badgeColor: "bg-purple-500"
+    gradient: "from-red-500 to-orange-500",
+    bgColor: "bg-red-50",
+    borderColor: "border-red-200",
+    textColor: "text-red-700",
+    hoverColor: "hover:bg-red-100",
+    badgeColor: "bg-red-500"
   }
 }
 

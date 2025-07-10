@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+'use client'
 import { getCurrentUser } from "@/lib/auth"
 import { redirect } from "next/navigation"
 import { getTimetable } from "@/lib/timetable"
@@ -9,13 +9,31 @@ import { Download, Printer, Calendar, BookOpen, Clock, GraduationCap, Bell, Tren
 import Link from "next/link"
 import { StudentTourButton } from "@/components/student-tour-button"
 import { StudentProfileDialog } from "@/components/student-profile-dialog"
+import { useEffect, useState } from "react"
+import { useUser } from "@clerk/nextjs"
 
-export default async function StudentDashboardPage() {
-  const user = await getCurrentUser()
-  
-  if (!user) {
-    redirect('/sign-in')
-  }
+export default function StudentDashboardPage() {
+  const { isSignedIn, isLoaded, user } = useUser();
+  const [stats, setStats] = useState<{ subjects: number, classesPerWeek: number, currentClass: string } | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
+
+  useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      window.location.href = "/sign-in";
+    }
+  }, [isLoaded, isSignedIn]);
+
+  useEffect(() => {
+    fetch("/api/student/data")
+      .then(res => res.json())
+      .then(data => {
+        if (data && !data.error) setStats(data)
+        else setError(data.error || "Failed to fetch stats")
+      })
+      .catch(() => setError("Failed to fetch stats"))
+      .finally(() => setLoading(false))
+  }, [])
 
   return (
     <div className="space-y-6">
@@ -41,7 +59,7 @@ export default async function StudentDashboardPage() {
                 <BookOpen className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-blue-900">6</div>
+                <div className="text-2xl font-bold text-blue-900">{loading ? "-" : stats ? stats.subjects : 0}</div>
                 <div className="text-sm text-blue-700">Subjects</div>
               </div>
             </div>
@@ -55,7 +73,7 @@ export default async function StudentDashboardPage() {
                 <Clock className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-green-900">30</div>
+                <div className="text-2xl font-bold text-green-900">{loading ? "-" : stats ? stats.classesPerWeek : 0}</div>
                 <div className="text-sm text-green-700">Classes/Week</div>
               </div>
             </div>
@@ -69,7 +87,7 @@ export default async function StudentDashboardPage() {
                 <GraduationCap className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-purple-900">Class 10A</div>
+                <div className="text-2xl font-bold text-purple-900">{loading ? "-" : stats ? stats.currentClass : "-"}</div>
                 <div className="text-sm text-purple-700">Current Class</div>
               </div>
             </div>
