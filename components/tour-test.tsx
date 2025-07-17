@@ -9,8 +9,7 @@ export function TourTest() {
 
   return (
     <div className="p-8 space-y-4">
-      <h2 className="text-2xl font-bold">Tour Test Component</h2>
-      
+      <h2 className="text-2xl font-bold">Tour Test Component</h2>  
       <div className="space-y-2">
         <h3 className="text-lg font-semibold">Direct Tour Start:</h3>
         <div className="flex gap-2">

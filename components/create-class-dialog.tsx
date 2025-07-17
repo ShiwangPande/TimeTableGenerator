@@ -23,7 +23,7 @@ export function CreateClassDialog() {
   const [loading, setLoading] = useState(false)
   const [classLevels, setClassLevels] = useState<string[]>([])
   const [formData, setFormData] = useState({
-    name: "",
+    grade: "",
     level: "",
     section: "",
   })
@@ -51,7 +51,7 @@ export function CreateClassDialog() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!formData.name.trim() || !formData.level || !formData.section.trim()) {
+    if (!formData.grade.trim() || !formData.level || !formData.section.trim()) {
       toast({
         title: "Error",
         description: "Please fill in all required fields",
@@ -68,7 +68,10 @@ export function CreateClassDialog() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          grade: Number(formData.grade),
+        }),
       })
 
       if (!response.ok) {
@@ -81,7 +84,7 @@ export function CreateClassDialog() {
         description: "Class created successfully",
       })
 
-      setFormData({ name: "", level: "", section: "" })
+      setFormData({ grade: "", level: "", section: "" })
       setOpen(false)
       router.refresh()
     } catch (error) {
@@ -118,15 +121,22 @@ export function CreateClassDialog() {
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
+              <Label htmlFor="grade" className="text-right">
+                Grade
               </Label>
-              <Input 
-                id="name" 
+              <Input
+                id="grade"
                 className="col-span-3"
-                value={formData.name}
-                onChange={(e) => handleInputChange("name", e.target.value)}
-                placeholder="Enter class name"
+                type="number"
+                min="1"
+                step="1"
+                value={formData.grade}
+                onChange={(e) => {
+                  // Only allow numbers
+                  const value = e.target.value.replace(/[^0-9]/g, "")
+                  handleInputChange("grade", value)
+                }}
+                placeholder="Enter grade (number only)"
                 required
               />
             </div>

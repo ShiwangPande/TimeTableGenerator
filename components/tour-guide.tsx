@@ -522,7 +522,6 @@ export function TourGuide({ role, isOpen, onClose, onComplete }: TourGuideProps)
         }}
       >
         <Card className="shadow-2xl border-0 bg-white/85 backdrop-blur-[4px] overflow-hidden h-full flex flex-col">
-          {/* Enhanced Gradient header */}
           <div className={`bg-gradient-to-r ${info.color} p-1 flex-shrink-0`}>
             <CardHeader className="pb-4 bg-white/90 backdrop-blur-[2px] rounded-t-lg">
               <div className="flex items-center justify-between">
@@ -553,8 +552,6 @@ export function TourGuide({ role, isOpen, onClose, onComplete }: TourGuideProps)
                   <X className="h-4 w-4" />
                 </Button>
               </div>
-              
-              {/* Enhanced Progress bar */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm text-gray-600">
                   <span className="flex items-center gap-1">
@@ -582,7 +579,6 @@ export function TourGuide({ role, isOpen, onClose, onComplete }: TourGuideProps)
               {currentStepData.description}
             </CardDescription>
 
-            {/* Enhanced Tips */}
             {currentStepData.tips && (
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
@@ -613,7 +609,6 @@ export function TourGuide({ role, isOpen, onClose, onComplete }: TourGuideProps)
               </motion.div>
             )}
 
-            {/* Enhanced Action buttons */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-200/80 flex-shrink-0">
               <div className="flex items-center gap-2">
                 <Button

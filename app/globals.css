@@ -173,7 +173,7 @@
   .timetable-cell { background: #fff !important; color: #000 !important; }
 }
 
-/* Enhanced Timetable Grid Styles */
+
 .timetable-grid {
   display: grid;
   grid-template-columns: 120px repeat(5, 1fr);

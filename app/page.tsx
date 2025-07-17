@@ -60,7 +60,6 @@ export default function LandingPage() {
 
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-orange-50 via-orange-100 to-red-50 flex flex-col items-center justify-center px-4 overflow-x-hidden">
-      {/* Animated background illustration */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <svg width="100%" height="100%" className="absolute left-0 top-0 opacity-30 animate-pulse" style={{zIndex:0}}>
           <defs>
@@ -72,7 +71,6 @@ export default function LandingPage() {
           <ellipse cx="60%" cy="40%" rx="500" ry="220" fill="url(#bg-gradient)" />
         </svg>
       </div>
-      {/* Hero Section */}
       <section className="relative z-10 max-w-2xl w-full text-center py-20">
         <div className="flex flex-col items-center gap-4">
           <GraduationCap className="h-20 w-20 text-orange-500 mb-2 animate-bounce" />

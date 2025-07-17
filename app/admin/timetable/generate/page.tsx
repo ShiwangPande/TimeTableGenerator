@@ -13,7 +13,7 @@ export default async function GenerateTimetablePage() {
   // Get data for the form
   const [classes, teachers, subjects, timeSlots, rooms] = await Promise.all([
     prisma.class.findMany({
-      orderBy: [{ name: "asc" }, { section: "asc" }]
+      orderBy: [{ grade: "asc" }, { section: "asc" }]
     }),
     prisma.teacher.findMany({
       include: {

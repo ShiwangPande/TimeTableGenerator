@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server"
 import { requireRole } from "@/lib/auth"
-import { Role, ClassLevel, IBLevel, IBGroup, SubjectCategory } from "@prisma/client"
+import { Role, ClassLevel, IBLevel, IBGroup } from "@prisma/client"
 
 export async function GET() {
   try {
@@ -11,7 +11,6 @@ export async function GET() {
       classLevels: Object.values(ClassLevel),
       ibLevels: Object.values(IBLevel),
       ibGroups: Object.values(IBGroup),
-      subjectCategories: Object.values(SubjectCategory),
     })
   } catch (error) {
     console.error("Get enums error:", error)

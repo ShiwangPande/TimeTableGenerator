@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic';
 import { type NextRequest, NextResponse } from "next/server"
-import { requireAuth } from "@/lib/auth"
+import { requireAuth, requireRole } from "@/lib/auth"
 import { Role } from "@prisma/client"
 import { prisma } from "@/lib/prisma"
 
@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
         students: true,
       },
       orderBy: [
-        { name: 'asc' },
+        { grade: 'asc' },
         { section: 'asc' },
       ],
     })
@@ -81,12 +81,12 @@ export async function POST(request: NextRequest) {
     await requireRole(Role.ADMIN)
     
     const body = await request.json()
-    const { name, level, section } = body
+    const { grade, level, section } = body
 
     // Validate required fields
-    if (!name || !level || !section) {
+    if (typeof grade !== 'number' || !level || !section) {
       return NextResponse.json(
-        { error: "Name, level, and section are required" },
+        { error: "Grade, level, and section are required" },
         { status: 400 }
       )
     }
@@ -94,14 +94,14 @@ export async function POST(request: NextRequest) {
     // Check if class already exists
     const existingClass = await prisma.class.findFirst({
       where: {
-        name,
+        grade,
         section,
       },
     })
 
     if (existingClass) {
       return NextResponse.json(
-        { error: "Class with this name and section already exists" },
+        { error: "Class with this grade and section already exists" },
         { status: 409 }
       )
     }
@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
     // Create the class
     const newClass = await prisma.class.create({
       data: {
-        name,
+        grade,
         level,
         section,
       },

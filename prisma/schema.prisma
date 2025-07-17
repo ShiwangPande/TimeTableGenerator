@@ -19,12 +19,6 @@ enum ClassLevel {
   Gen
 }
 
-enum SubjectCategory {
-  Individual
-  Societies
-  Sciences
-}
-
 enum DayOfWeek {
   MONDAY
   TUESDAY
@@ -106,7 +100,7 @@ model Student {
 
 model Class {
   id      String     @id @default(cuid())
-  name    String
+  grade   Int
   level   ClassLevel
   section String
   
@@ -117,13 +111,12 @@ model Class {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
-  @@unique([name, section])
+  @@unique([grade, section])
 }
 
 model Subject {
   id                String          @id @default(cuid())
   name              String
-  category          SubjectCategory
   multiSlotAllowed  Boolean         @default(false)
   teacherId         String
   classId           String

@@ -22,7 +22,7 @@ export default async function ClassesPage() {
       },
       students: true,
     },
-    orderBy: { name: "asc" },
+    orderBy: { grade: "asc" },
   })
 
   return (

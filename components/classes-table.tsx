@@ -9,9 +9,9 @@ import { EditClassDialog } from "./edit-class-dialog"
 import { useToast } from "@/hooks/use-toast"
 import { useRouter } from "next/navigation"
 
-interface Class {
+interface LocalClass {
   id: string
-  name: string
+  grade: number
   level: string
   section: string
   subjects: any[]
@@ -19,22 +19,22 @@ interface Class {
 }
 
 interface ClassesTableProps {
-  classes: Class[]
+  classes: LocalClass[]
 }
 
 export function ClassesTable({ classes }: ClassesTableProps) {
   const [editOpen, setEditOpen] = useState(false)
-  const [selectedClass, setSelectedClass] = useState<Class | null>(null)
+  const [selectedClass, setSelectedClass] = useState<LocalClass | null>(null)
   const { toast } = useToast()
   const router = useRouter()
 
-  const handleEdit = (cls: Class) => {
+  const handleEdit = (cls: LocalClass) => {
     setSelectedClass(cls)
     setEditOpen(true)
   }
 
-  const handleDelete = async (cls: Class) => {
-    if (!confirm(`Are you sure you want to delete class "${cls.name} - ${cls.section}"?`)) {
+  const handleDelete = async (cls: LocalClass) => {
+    if (!confirm(`Are you sure you want to delete class "Grade ${cls.grade} - ${cls.section}"?`)) {
       return
     }
 
@@ -73,7 +73,7 @@ export function ClassesTable({ classes }: ClassesTableProps) {
       <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Name</TableHead>
+          <TableHead>Grade</TableHead>
           <TableHead>Level</TableHead>
           <TableHead>Section</TableHead>
           <TableHead>Subjects</TableHead>
@@ -84,7 +84,7 @@ export function ClassesTable({ classes }: ClassesTableProps) {
       <TableBody>
         {classes.map((cls) => (
           <TableRow key={cls.id}>
-            <TableCell className="font-medium">{cls.name}</TableCell>
+            <TableCell className="font-medium">{cls.grade}</TableCell>
             <TableCell>
               <Badge variant="outline">{cls.level}</Badge>
             </TableCell>

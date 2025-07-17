@@ -13,7 +13,6 @@ export async function GET(request: NextRequest) {
     // Get filter parameters
     const classId = searchParams.get("classId")
     const teacherId = searchParams.get("teacherId")
-    const category = searchParams.get("category")
     
     // Build where clause
     const whereClause: any = {}
@@ -24,10 +23,6 @@ export async function GET(request: NextRequest) {
     
     if (teacherId) {
       whereClause.teacherId = teacherId
-    }
-    
-    if (category) {
-      whereClause.category = category
     }
     
     // Get all subjects with their details
@@ -49,7 +44,6 @@ export async function GET(request: NextRequest) {
       },
       orderBy: [
         { name: 'asc' },
-        { category: 'asc' },
       ],
     })
     
@@ -69,12 +63,12 @@ export async function POST(request: NextRequest) {
     await requireRole(Role.ADMIN)
     
     const body = await request.json()
-    const { name, category, multiSlotAllowed, teacherId, classId, ibGroup, level } = body
+    const { name, multiSlotAllowed, teacherId, classId, ibGroup, level } = body
 
     // Validate required fields
-    if (!name || !category || !teacherId || !classId || !ibGroup || !level) {
+    if (!name || !teacherId || !classId || !ibGroup || !level) {
       return NextResponse.json(
-        { error: "Name, category, teacherId, classId, ibGroup, and level are required" },
+        { error: "Name, teacherId, classId, ibGroup, and level are required" },
         { status: 400 }
       )
     }
@@ -122,7 +116,6 @@ export async function POST(request: NextRequest) {
     const newSubject = await prisma.subject.create({
       data: {
         name,
-        category,
         multiSlotAllowed: multiSlotAllowed || false,
         teacherId,
         classId,

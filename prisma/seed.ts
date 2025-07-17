@@ -122,31 +122,31 @@ async function main() {
 
   const ibSubjects = [
     // Languages
-    { name: "English A: Language and Literature", category: "Individual", ibGroup: "LANGUAGES", level: "DP" },
-    { name: "Spanish B", category: "Individual", ibGroup: "LANGUAGES", level: "MYP" },
-    { name: "French B", category: "Individual", ibGroup: "LANGUAGES", level: "DP" },
+    { name: "English A: Language and Literature", ibGroup: "LANGUAGES", level: "DP" },
+    { name: "Spanish B", ibGroup: "LANGUAGES", level: "MYP" },
+    { name: "French B", ibGroup: "LANGUAGES", level: "DP" },
     
     // Individuals and Societies
-    { name: "History", category: "Societies", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "DP" },
-    { name: "Geography", category: "Societies", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "MYP" },
-    { name: "Economics", category: "Societies", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "DP" },
-    { name: "Psychology", category: "Societies", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "DP" },
+    { name: "History", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "DP" },
+    { name: "Geography", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "MYP" },
+    { name: "Economics", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "DP" },
+    { name: "Psychology", ibGroup: "INDIVIDUALS_AND_SOCIETIES", level: "DP" },
     
     // Sciences
-    { name: "Biology", category: "Sciences", ibGroup: "SCIENCES", level: "DP" },
-    { name: "Chemistry", category: "Sciences", ibGroup: "SCIENCES", level: "MYP" },
-    { name: "Physics", category: "Sciences", ibGroup: "SCIENCES", level: "DP" },
-    { name: "Environmental Systems", category: "Sciences", ibGroup: "SCIENCES", level: "MYP" },
+    { name: "Biology", ibGroup: "SCIENCES", level: "DP" },
+    { name: "Chemistry", ibGroup: "SCIENCES", level: "MYP" },
+    { name: "Physics", ibGroup: "SCIENCES", level: "DP" },
+    { name: "Environmental Systems", ibGroup: "SCIENCES", level: "MYP" },
     
     // Mathematics
-    { name: "Mathematics: Analysis and Approaches", category: "Sciences", ibGroup: "MATHEMATICS", level: "DP" },
-    { name: "Mathematics: Applications and Interpretation", category: "Sciences", ibGroup: "MATHEMATICS", level: "DP" },
-    { name: "Mathematics", category: "Sciences", ibGroup: "MATHEMATICS", level: "MYP" },
+    { name: "Mathematics: Analysis and Approaches", ibGroup: "MATHEMATICS", level: "DP" },
+    { name: "Mathematics: Applications and Interpretation", ibGroup: "MATHEMATICS", level: "DP" },
+    { name: "Mathematics", ibGroup: "MATHEMATICS", level: "MYP" },
     
     // Arts
-    { name: "Visual Arts", category: "Individual", ibGroup: "ARTS", level: "DP" },
-    { name: "Music", category: "Individual", ibGroup: "ARTS", level: "MYP" },
-    { name: "Theatre", category: "Individual", ibGroup: "ARTS", level: "DP" },
+    { name: "Visual Arts", ibGroup: "ARTS", level: "DP" },
+    { name: "Music", ibGroup: "ARTS", level: "MYP" },
+    { name: "Theatre", ibGroup: "ARTS", level: "DP" },
   ]
   // Seed IB subjects (assign to first teacher/class for demo)
   const firstTeacher = await prisma.teacher.findFirst()
@@ -156,7 +156,6 @@ async function main() {
       await prisma.subject.create({
         data: {
           name: subj.name,
-          category: subj.category as any,
           ibGroup: subj.ibGroup as any,
           level: subj.level as any,
           teacherId: firstTeacher.id,

@@ -76,6 +76,8 @@ const adminNavItems: (NavItem & { group: string })[] = [
   { href: "/admin/subjects", label: "Subjects", icon: BookOpen, description: "Subject Configuration", group: "Management" },
   { href: "/admin/rooms", label: "Rooms", icon: MapPin, description: "Room Management", group: "Management" },
   { href: "/admin/timeslots", label: "Time Slots", icon: Clock, description: "Schedule Configuration", group: "Schedule" },
+  // Add Generate Timetable button here
+  { href: "/admin/timetable/generate", label: "Generate Timetable", icon: RefreshCw, description: "Generate Master Timetable", group: "Schedule" },
   { href: "/admin/timetable", label: "Timetable", icon: Calendar, description: "Master Timetable", group: "Schedule" },
   { href: "/admin/timetable/test", label: "Timetable Test", icon: Filter, badge: "Beta", description: "Test Features", group: "Schedule" },
   { href: "/admin/users", label: "User Management", icon: Users, description: "User Accounts", group: "System" },

@@ -34,7 +34,6 @@ export class NotificationService {
   private static transporter: nodemailer.Transporter | null = null
 
   static initialize() {
-    // Use Gmail SMTP (free tier) or console logging for development
     if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
       this.transporter = nodemailer.createTransport({
         service: 'gmail',

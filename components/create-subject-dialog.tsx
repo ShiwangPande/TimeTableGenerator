@@ -44,7 +44,6 @@ export function CreateSubjectDialog() {
   })
   const [formData, setFormData] = useState({
     name: "",
-    category: "",
     teacherId: "",
     classId: "",
     multiSlotAllowed: false,
@@ -106,7 +105,7 @@ export function CreateSubjectDialog() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!formData.name.trim() || !formData.category || !formData.teacherId || !formData.classId || !formData.ibGroup || !formData.level) {
+    if (!formData.name.trim() || !formData.teacherId || !formData.classId || !formData.ibGroup || !formData.level) {
       toast({
         title: "Error",
         description: "Please fill in all required fields",
@@ -136,7 +135,7 @@ export function CreateSubjectDialog() {
         description: "Subject created successfully",
       })
 
-      setFormData({ name: "", category: "", teacherId: "", classId: "", multiSlotAllowed: false, ibGroup: "", level: "" })
+      setFormData({ name: "", teacherId: "", classId: "", multiSlotAllowed: false, ibGroup: "", level: "" })
       setOpen(false)
       router.refresh()
     } catch (error) {
@@ -185,27 +184,7 @@ export function CreateSubjectDialog() {
                 required
               />
             </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="category" className="text-right">
-                Category
-              </Label>
-              <Select 
-                value={formData.category} 
-                onValueChange={(value) => handleInputChange("category", value)}
-                required
-              >
-                <SelectTrigger className="col-span-3">
-                  <SelectValue placeholder="Select category" />
-                </SelectTrigger>
-                <SelectContent>
-                  {enumValues.subjectCategories.map((category) => (
-                    <SelectItem key={category} value={category}>
-                      {category}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
+            {/* Category field removed */}
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="teacher" className="text-right">
                 Teacher
